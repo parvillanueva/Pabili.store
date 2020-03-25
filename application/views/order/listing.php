@@ -31,7 +31,7 @@
 	form += '		<div class="card-body">';
 	form += '			<div class="form-row">';
 	form += '			<div class="form-group col-12 col-md-2">';
-	form += '					<input name="qty[]" type="number" class="form-control" placeholder="Piraso" required>';
+	form += '					<input name="qty[]" step="0.01" min="0" type="number" class="form-control" placeholder="Piraso" required>';
 	form += '			</div>';
 	form += '			<div class="form-group col-12 col-md-2">';
 	form += '				<select name="sukat[]" required class="form-control">';

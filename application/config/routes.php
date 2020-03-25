@@ -51,5 +51,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'order';
 $route['get-orders/(:any)'] = 'get_orders/view/$1';
+$route['download-orders/(:any)'] = 'get_orders/download/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
