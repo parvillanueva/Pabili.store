@@ -3,8 +3,10 @@
     <div class="container-fluid">
         <div class="au-container">
             <div class="row flex-column-reverse flex-md-row">
-                <div class="col-md-6 col-md-pull-6 au-footer-details">  
-                    <span class="au-pf">2020 All Rights Reserved © Pabili.store.</span>
+                <div class="col-md-12 au-footer-details">  
+                    <center>
+                        <span class="au-pf">2020 All Rights Reserved © Pabili.store</span>
+                    </center>
                 </div>
             </div>
         </div>

@@ -53,9 +53,10 @@ class Order extends CI_Controller {
 
 	public function submit(){
 		echo "<pre>";
+		$order_no = time(); 
 		$data = array(
 			"order_date"	=> date("Y-m-d H:i:s"),
-			"order_no"		=> time(),
+			"order_no"		=> $order_no,
 			"name"			=> $this->input->post("pangalan"),
 			"contact"		=> $this->input->post("contactno"),
 			"lugar"			=> $this->input->post("lugar"),
@@ -68,11 +69,12 @@ class Order extends CI_Controller {
 
 		$this->session->sess_destroy();
 
-		redirect(base_url("order/thankyou"));
+		redirect(base_url("order/thankyou/") . $order_no);
 
 	}
 
 	public function thankyou(){
+		$data['orderno'] = $this->uri->segment(3);
 		$data['content'] = "order/thankyou";
 		$this->load->view('template/layout', $data);
 	}

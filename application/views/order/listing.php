@@ -7,6 +7,9 @@
 	    padding-left: 5px;
 	    padding-bottom: 5px;
 	}
+	.card {
+	    margin: 5px;
+	}
 </style>
 <div class="row">
     <div class="col-md-12 p-4">
@@ -15,6 +18,7 @@
           		Order List
         	</div>
 	        <div class="card-body">
+	        	<strong>Paalala : </strong><label>10 Item laman po ang limit kada Pabili.</label><br />
 	          	<form id="formitem" method="post" action="<?= base_url("order/form");?>">
   					<div id="item_list"></div>
 					<br>
@@ -27,6 +31,7 @@
 </div>
 
 <script type="text/javascript">
+	var item_count = 1;
 	var form = '<div class="card">';
 	form += '		<div class="card-body">';
 	form += '			<div class="form-row">';
@@ -35,7 +40,6 @@
 	form += '			</div>';
 	form += '			<div class="form-group col-12 col-md-2">';
 	form += '				<select name="sukat[]" required class="form-control">';
-	form += '						<option disabled selected>Sukat</option>';
 	form += '						<option value="Kilo">Kilo</option>';
 	form += '						<option value="Piraso">Piraso</option>';
 	form += '						<option value="Lata">Lata</option>';
@@ -62,14 +66,19 @@
 
 	$(document).on("click", ".btn-remove", function(e){
 		e.preventDefault();
+		item_count--;
 		var el = $(this).parent().parent().parent().parent();
 		el.remove();
+		$("#dagdag_item").show();
 	});
 
 
 	$(document).on("click", "#dagdag_item", function(e){
 		e.preventDefault();
-		add_item();
+		if(item_count <= 10){
+			item_count++;
+			add_item();
+		}
 	});
 
 	$("#formitem").validate({
@@ -80,6 +89,10 @@
 	});
 
 	function add_item(){
+
+		if(item_count >= 10){
+			$("#dagdag_item").hide();
+		}
 		$("#item_list").append(form);
 	}
 </script>

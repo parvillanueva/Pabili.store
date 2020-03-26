@@ -6,11 +6,21 @@
         	</div>
 	        <div class="card-body">
 	          	<form>
-	  				<div class="form-row">
-	    				<label>
-	    					Order No . 413213213321<br><br>
-	    					Please take note of you order number for reference and tracking. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-	    				</label>
+	  				<div class="">
+
+	  					<center>
+	  						<h4>Order Complete</h4>
+	  						<h4>Order no.</h4>
+	    					<h2><?= $orderno;?></h2>
+	    					<label>
+		    					Maaari laman po na pakisulat ang Order No na ito.
+		    				</label>
+	    					<br />
+	  					</center>
+	    				<h4>Paalaala</h4>
+	    				<label>Pag punta ng aming PROVIDER sa inyong tahanan. maaari laman po mag provide ng <b>ECOBAG</b> para po sa pag lalagyan ng inyong bilihin</label>
+	    				<label>Asahan na medyo matagal ang pagbili ng inyong mga kailangan dahil sa pinatupad na <b>Social Distancing</b> at limitado lang ang pumapasok sa loob ng Palengke o Grocery. Pero makakaasa kayo na gagawin namin ang lahat mabili ang inyong mga bilihin.</label>
+
 	  					<a href="<?= base_url();?>" class="btn btn-primary btn-block">Home</a>
 					</div>
 				</form>

@@ -2,17 +2,23 @@
     <div class="col-md-12 p-4">
       	<div class="card">
         	<div class="card-header">
-          		Order Policy
+          		Mga Paalala
         	</div>
 	        <div class="card-body">
-	          	<form>
-	  				<div class="form-row">
-	    				<label>
-	    					Order cutoff will be ... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-	    				</label>
+	          	<div>
+	  				<div class="">
+	    				<p>Pabili Cutoff ay tuwing 6AM at 1PM.</p>
+	    				<p>10 Item lamang po ang maximum limit kada pabili.</p>
+	    				<p>Ang Delivery Fee at Serice Tip ay fix po sa 50.00 per pabili. </p>
+	    				<p>Pag punta ng aming PROVIDER sa inyong tahanan. maaari laman po mag provide ng <b>ECOBAG</b> para po sa pag lalagyan ng inyong bilihin</p>
+	    				<p>Asahan na medyo matagal ang pagbili ng inyong mga kailangan dahil sa pinatupad na <b>Social Distancing</b> at limitado lang ang pumapasok sa loob ng Palengke o Grocery. Pero makakaasa kayo na gagawin namin ang lahat mabili ang inyong mga bilihin.</p>
+	    				<p>Ang serbisyong ito ay maari lamang gamitin sa mga sumusunod na lugar : </p>
+	    				<ul>
+	    					<li>Angono Rizal</li>
+	    				</ul>
 	  					<a href="<?= base_url("order/list");?>" class="btn btn-primary btn-block">Accept & Continue</a>
 					</div>
-				</form>
+				</div>
 	        </div>
 	    </div>
     </div>

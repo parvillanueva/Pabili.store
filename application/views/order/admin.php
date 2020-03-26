@@ -3,7 +3,7 @@
     <div class="col-md-12 p-4">
       	<div class="card">
         	<div class="card-header">
-          		Barangay <?= @$area;?> Order List 
+          		Pending Orders
         	</div>
 	        <div class="card-body">
 	          	<table class="table table-bordered">
@@ -29,6 +29,53 @@
 		          		<?php } else { ?>
 		          			<tr>
 		          				<td colspan="4">No pending orders available</td>
+		          			</tr>
+		          		<?php } ?>
+	          		</tbody>
+	          	</table>	
+	        </div>
+	    </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12 p-4">
+      	<div class="card">
+        	<div class="card-header">
+          		Ongoing Orders
+        	</div>
+	        <div class="card-body">
+	          	<table class="table table-bordered">
+	          		<thead>
+	          			<tr>
+	          				<th>Order No.</th>
+	          				<th>Date</th>
+	          				<th>Name</th>
+	          				<th>Contact</th>
+	          				<th>Address</th>
+	          				<th>Items</th>
+	          				<th>Action</th>
+	          			</tr>
+	          		</thead>
+	          		<tbody>
+	          			<?php if(count($order_list_ongoing) > 0) { ?>
+	          				<?php foreach ($order_list_ongoing as $key => $value) { ?>
+			          			<tr>
+			          				<td><?= $value->order_no;?></td>
+			          				<td style="width: 200px;"><?= date("F d,Y h:i a", strtotime($value->order_date));?></td>
+			          				<td style="width: 200px;"><?= $value->name;?></td>
+			          				<td style="width: 200px;"><?= $value->contact;?></td>
+			          				<td style="width: 200px;"><?= $value->address;?></td>
+			          				<td style="width: 130px;"><?= count(json_decode($value->order));?></td>
+			          				<td style="width: 300px;">
+			          					<button id="complete_order" order="<?= $value->order_no;?>" class="btn btn-success">Order Complete</button>
+			          				</td>
+			          			</tr>
+			          		<?php } ?>
+		          		<?php } else { ?>
+		          			<tr>
+		          				<td colspan="7">No Ongoing Orders</td>
 		          			</tr>
 		          		<?php } ?>
 	          		</tbody>
@@ -81,5 +128,14 @@
 		function(){
 			location.reload();
 		}, 2000);
+	});
+	$(document).on("click", "#complete_order", function(e){
+		e.preventDefault();
+		var orderno = $(this).attr("order");
+		var url = "<?= base_url("complete-order/");?>" + orderno;
+		$.get(url, function(data, status){
+		    location.reload();
+		});
+		
 	});
 </script>
